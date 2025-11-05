@@ -341,6 +341,46 @@ GO
   </ol>
 </section>
 
+<section id="MEDIDAS CREADAS">
+  <h2>MEDIDAS CREADAS</h2>
+  <ol>
+    <li>*INDICADOR MENSUAL DE % DE DISPONIBILIDAD MECANICA DE UN CARGADOR FRONTAL EN LA MINA JUANITA = DIVIDE ([Horas Operación],[Horas Jornada],BLANK()) * 100
+
+-Horas Mantenimiento = SUM ( 'DVG1 EVENTO_MANTENIMIENTO'[DURACION])
+-Horas Jornada = CALCULATE(SUM('DVG1 FECHAS'[HORAS_JORNADA]))
+-Horas Operación = [Horas Jornada] - [Horas Mantenimiento]
+-Toneladas Extraídas = SUM('DVG1 PRODUCCION'[TONELADAS_EXTRAIDAS])
+
+-Indicador Mensual % Disponibilidad Mecánica Flota = CALCULATE( AVERAGEX( VALUES('DVG1 EQUIPOS'[ID_EQUIPO]), [*INDICADOR MENSUAL DE % DE DISPONIBILIDAD MECANICA DE UN CARGADOR FRONTAL EN LA MINA JUANITA]),VALUES('DVG1 FECHAS'[MES]))
+-Indicador Mensual Alertas por Sensor = CALCULATE(COUNTROWS('DVG1 ALERTA_SENSOR'), VALUES('DVG1 FECHAS'[MES]), VALUES('DVG1 ALERTA_SENSOR'[ID_SENSOR]))
+-Indicador mensual de % disponibilidad mecánica de todos los equipos = AVERAGEX(VALUES('DVG1 EQUIPOS'[ID_EQUIPO]),[*INDICADOR MENSUAL DE % DE DISPONIBILIDAD MECANICA DE UN CARGADOR FRONTAL EN LA MINA JUANITA])
+-Indicador mensual de cantidad de horas de mantenimiento = CALCULATE(SUM('DVG1 EVENTO_MANTENIMIENTO'[DURACION]), VALUES('DVG1 FECHAS'[MES]), VALUES('DVG1 EQUIPOS'[ID_EQUIPO]), VALUES('DVG1 MINAS'[NOMBRE_MINA]))
+-Indicador mensual de toneladas extraídas de cobre = CALCULATE([Toneladas Extraídas], VALUES('DVG1 FECHAS'[MES]),VALUES('DVG1 PRODUCCION'[ID_EQUIPO]))
+-Indicador Mensual Duración Promedio Mantenimiento = CALCULATE(AVERAGE('DVG1 EVENTO_MANTENIMIENTO'[DURACION]), VALUES('DVG1 FECHAS'[MES]), VALUES('DVG1 EQUIPOS'[ID_EQUIPO]))
+-Indicador Mensual Eficiencia Operativa = CALCULATE(DIVIDE( SUM('DVG1 PRODUCCION'[TONELADAS_EXTRAIDAS]),[Horas Operación],0),VALUES('DVG1 FECHAS'[MES]),
+VALUES('DVG1 EQUIPOS'[ID_EQUIPO]))
+-Indicador Mensual Horas Operativas = CALCULATE([Horas Operación],VALUES('DVG1 FECHAS'[MES]),
+VALUES('DVG1 EQUIPOS'[ID_EQUIPO]))
+-Variación Mensual de Indicador mensual de porcentaje de disponibilidad mecánica del cargador frontal en la Mina Juanita de extracción de cobre = 
+VAR IndicadorActual =[*INDICADOR MENSUAL DE % DE DISPONIBILIDAD MECANICA DE UN CARGADOR FRONTAL EN LA MINA JUANITA]
+VAR IndicadorAnterior =CALCULATE([*INDICADOR MENSUAL DE % DE DISPONIBILIDAD MECANICA DE UN CARGADOR FRONTAL EN LA MINA JUANITA],PREVIOUSMONTH('DVG1 FECHAS'[FECHA]))
+RETURN DIVIDE(IndicadorActual - IndicadorAnterior, IndicadorAnterior, 0) * 100
+
+Medidas para nuestro reporte:
+Monto de Facturación Con Inversión = 
+SUM ( 'DVG1 FacturacionKPI'[Facturacion_Con_Inversion] )
+Monto de Facturación Sin Inversión = 
+SUM ( 'DVG1 FacturacionKPI'[Facturacion_Sin_Inversion] )
+Facturación Adicional = 
+SUM ( 'DVG1 FacturacionKPI'[Facturacion_Adicional] )
+Indicador Con Inversión % = 
+AVERAGE ( 'DVG1 FacturacionKPI'[Indicador_Con_Inversion] )
+Indicador Sin Inversión % = 
+AVERAGE ( 'DVG1 FacturacionKPI'[Indicador_Sin_Inversion] )
+</li>
+  </ol>
+</section>
+
   <section id="Resultados">
     <h2>Resultados, KPIs y graficos</h2>
     <p>[Incluye capturas de tus dashboards, resultados obtenidos o indicadores clave.]</p>
