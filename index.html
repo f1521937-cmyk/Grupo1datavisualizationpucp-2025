@@ -68,12 +68,12 @@
 
   <section id="arquitectura">
     <h2>Diagrama de Arquitectura </h2>
-    <p>[La arquitectura se organiza en capas, integrando fuentes de datos hasta su presentación analítica. Se utiliza la combinación de Azure SQL, ETL, Microsoft Fabric, Power Bi herramientas de análisis para ofrecer la integración, procesamiento y visualización eficaces.]</p>
+    <p>La arquitectura se organiza en capas, integrando fuentes de datos hasta su presentación analítica. Se utiliza la combinación de Azure SQL, ETL, Microsoft Fabric, Power Bi herramientas de análisis para ofrecer la integración, procesamiento y visualización eficaces.</p>
     <img src="DIAGRAMA DE ARQUITECTURA.png" alt="Diagrama de arquitectura" style="max-width:100%; margin-top:10px;">
   </section>
 
   <section id="detalle">
-    <h2>Detalle de cada “capa” o módulo</h2>
+    <h2>Detalle de cada “capa” </h2>
     <h3>Capa de Datos</h3>
     <p>[Se utilizó codigo SQL para añadir tablas a la nube]</p>
     <pre><code>
@@ -385,13 +385,13 @@ GO
 ALTER TABLE [DVG1].[TAJOS] CHECK CONSTRAINT [FK_TAJOS_MINAS]
 GO
       </code></pre>
-    <h3>Capa de Aplicación</h3>
-    <p>[Explica las herramientas o servicios usados para la lógica del negocio.]</p>
     <h3>Capa ETL</h3>
     <p>[Procesos de extracción, transformación y carga de datos.]</p>
     <h3>Capa de Data Warehouse (DW)</h3>
     <p>[Describe la estructura del almacén de datos.]</p>
-	  <img src="TABLAS FABRIC.PNG" alt="TABLAS FABRIC" style="max-width:100%; margin-top:10px;">
+	  <figure style="text-align: center; margin-top: 20px;">
+	  <img src="TABLAS FABRIC.png" alt="TABLAS FABRIC" style="max-width:100%; margin-top:10px;">
+  </figure>
     <h3>Capa de Presentación</h3>
     <p>[Dashboards, reportes o aplicaciones finales.]</p>
   </section>
