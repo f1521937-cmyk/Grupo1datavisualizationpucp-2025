@@ -346,32 +346,52 @@ GO
 
 <section id="medidas-creadas">
   <h2>MEDIDAS CREADAS</h2>
+
+  {% raw %}
+  <style>
+    pre {
+      background-color: #f5f7fa;
+      padding: 10px 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 14px;
+      color: #333;
+      border-left: 4px solid #007BFF;
+      margin-bottom: 15px;
+      white-space: pre-wrap; /* mantiene saltos de línea */
+    }
+    #medidas-creadas h2 {
+      color: #0A2A66;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 26px;
+    }
+    #medidas-creadas strong {
+      color: #004AAD;
+    }
+    #medidas-creadas p {
+      margin-top: 10px;
+      font-weight: 600;
+    }
+  </style>
+
   <ol>
     <li>
       <p><strong>Indicador mensual de % de disponibilidad mecánica de un cargador frontal en la Mina Juanita:</strong></p>
-      <pre><code>
-DIVIDE([Horas Operación], [Horas Jornada], BLANK()) * 100
-      </code></pre>
+      <pre><code>DIVIDE([Horas Operación], [Horas Jornada], BLANK()) * 100</code></pre>
 
       <p><strong>Horas Mantenimiento:</strong></p>
-      <pre><code>
-SUM('DVG1 EVENTO_MANTENIMIENTO'[DURACION])
-      </code></pre>
+      <pre><code>SUM('DVG1 EVENTO_MANTENIMIENTO'[DURACION])</code></pre>
 
       <p><strong>Horas Jornada:</strong></p>
-      <pre><code>
-CALCULATE(SUM('DVG1 FECHAS'[HORAS_JORNADA]))
-      </code></pre>
+      <pre><code>CALCULATE(SUM('DVG1 FECHAS'[HORAS_JORNADA]))</code></pre>
 
       <p><strong>Horas Operación:</strong></p>
-      <pre><code>
-[Horas Jornada] - [Horas Mantenimiento]
-      </code></pre>
+      <pre><code>[Horas Jornada] - [Horas Mantenimiento]</code></pre>
 
       <p><strong>Toneladas Extraídas:</strong></p>
-      <pre><code>
-SUM('DVG1 PRODUCCION'[TONELADAS_EXTRAIDAS])
-      </code></pre>
+      <pre><code>SUM('DVG1 PRODUCCION'[TONELADAS_EXTRAIDAS])</code></pre>
 
       <p><strong>Indicador Mensual % Disponibilidad Mecánica Flota:</strong></p>
       <pre><code>
@@ -458,7 +478,9 @@ Indicador Sin Inversión % = AVERAGE('DVG1 FacturacionKPI'[Indicador_Sin_Inversi
       </code></pre>
     </li>
   </ol>
+  {% endraw %}
 </section>
+
 
 	<section id="Resultados">
     <h2>Resultados, KPIs y graficos</h2>
