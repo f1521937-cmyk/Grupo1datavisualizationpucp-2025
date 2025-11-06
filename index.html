@@ -87,17 +87,17 @@
       <tr style="background-color: #48bb78; color: white;">
         <td>🟩 Verde</td>
         <td>≥ 87.22%</td>
-        <td>El equipo operó dentro de los estándares aceptables.</td>
+        <td>La máquina estuvo funcionando dentro de las horas de servicio aceptadas.</td>
       </tr>
       <tr style="background-color: #ecc94b; color: #2d3748;">
         <td>🟨 Amarillo</td>
         <td>≥ 85% y &lt; 87.22%</td>
-        <td>El equipo operó dentro de lo esperado, pero puede mejorar su eficiencia.</td>
+        <td>La máquina estuvo funcionando dentro de las horas de servicio aceptadas pero se puede mejorar su eficiencia.</td>
       </tr>
       <tr style="background-color: #f56565; color: white;">
         <td>🟥 Rojo</td>
         <td>&lt; 85%</td>
-        <td>El equipo presentó excesivas horas fuera de servicio, por debajo del estándar aceptado.</td>
+        <td>La máquina estuvo fuera de servicio por muchas horas, por fuera del estandar aceptado.</td>
       </tr>
     </tbody>
   </table>
@@ -136,7 +136,7 @@
   <section id="detalle">
     <h2>Detalle de cada “capa” </h2>
     <h3>Capa de Datos</h3>
-    <p>[Se utilizó codigo SQL para añadir tablas a la nube]</p>
+    <p>Se utilizó codigo SQL para añadir tablas a la nube.</p>
     <pre><code>
       /****** Object:  Table [DVG1].[ALERTA_SENSOR]    Script Date: 30/10/2025 14:27:22 ******/
 SET ANSI_NULLS ON
@@ -371,11 +371,10 @@ PRIMARY KEY CLUSTERED
 GO
       </code></pre>
     <h3>Capa ETL</h3>
-    <p>[Procesos de extracción, transformación y carga de datos.]</p>
+    <p>Con Microsoft Fabric (Dataflows y Pipelines) se integra los datos hacia el Data Warehouse, es un proceso de extracción, transformación y carga de datos.</p>
 	  <img src="PIPELINE_DF_FABRIC.png" alt="Capa ETL" style="max-width:90%; margin-top:15px; border-radius:10px; box-shadow:0 0 8px rgba(0,0,0,0.1);">
    <h3>Capa de Data Warehouse (DW)</h3>
    <p>En Microsoft Fabric se procedió a relacionar las tablas de acuerdo a nuestro modelo de datos de uno a muchos.</p>
-      <img src="RELACIONES_FABRIC.png" alt="Relaciones en Fabric" style="max-width:90%; margin-top:15px; border-radius:10px; box-shadow:0 0 8px rgba(0,0,0,0.1);">
     <h3>Capa de Presentación</h3>
     <p>En Reportes Fabric procedimos a realizar nuestro REPORTE DEL INDICADOR MENSUAL DE PORCENTAJE DE DISPONIBILIDAD MECANICA DE UN CARGADOR FRONTAL EN LA MINA JUANITA DE EXTRACCION DE COBRE</p>
 	  <img src="REPORTE_FABRIC.png" alt="Reporte en Fabric" style="max-width:100%; margin-top:10px;">
