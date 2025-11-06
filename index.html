@@ -41,7 +41,68 @@
     <p>La Mina Juanita es una empresa minera dedicada a la extracción de concentrado de cobre (Cu), cuya eficiencia productiva depende en gran medida del desempeño y disponibilidad de su flota de equipos, en este caso de cargadores frontales. Estos equipos cumplen un papel fundamental en el ciclo operativo de extracción, carga y transporte del mineral, siendo crucial para mantener la rentabilidad del proceso de producción.</p>
   
   <p>El presente proyecto busca implementar mejoras a través de herramientas como SQL Azure, Microsoft Fabric, Power BI y Python. Se desarrollará en torno al Indicador mensual de Porcentaje de Disponibilidad Mecánica de un cargador frontal, el cual refleja el tiempo real en que el equipo se encuentra operativo respecto al total de horas planificadas de trabajo. Este indicador permitirá evaluar la eficiencia operativa, optimizar la gestión de mantenimientos y maximizar la eficiencia operativa.</p>
-  
+
+	  <section id="indicador" style="font-family: Arial, sans-serif; margin: 40px; line-height: 1.6;">
+  <h2 style="color: #2a4365;">⚙️ Definición del Indicador</h2>
+  <p>
+    La <strong>Mina Juanita</strong> utiliza una flota de cargadores frontales cuya principal función es la
+    <strong>extracción de concentrado de cobre (Cu)</strong>. Estos equipos cuentan con un ciclo de mantenimiento
+    programado que busca mantenerlos en condiciones óptimas y listos para su operación.
+  </p>
+
+  <p>
+    El <strong>Indicador de Disponibilidad Mecánica (DM%)</strong> permite determinar <strong>cuánto tiempo real</strong>
+    estuvo disponible un cargador frontal para operar durante un mes, en comparación con el tiempo total planificado.
+  </p>
+
+  <p>
+    Este indicador es clave porque permite evaluar si el equipo funcionó según lo esperado o presentó paradas no programadas.
+    Con esta información se puede planificar mejor la utilización del equipo, anticipar fallas, optimizar mantenimientos
+    y tomar decisiones como la redistribución de la carga de trabajo o el reemplazo del equipo.
+  </p>
+
+  <p><strong>Condiciones operativas:</strong></p>
+  <ul>
+    <li>Jornada laboral: 12 horas diarias.</li>
+    <li>Días considerados por mes: 30 días.</li>
+    <li>Ley del tajo: 2.40% de Cu (de cada 100 toneladas de concentrado, 2.4 corresponden a Cu).</li>
+    <li>Precio del Cu (junio 2025): US$ 9,667.00 por tonelada.</li>
+    <li>Facturación calculada según la concentración de Cu únicamente.</li>
+  </ul>
+
+  <hr style="margin: 30px 0;">
+
+  <h2 style="color: #2a4365;">🚦 Semáforo de Disponibilidad</h2>
+  <p>El semáforo permite identificar el nivel de desempeño del cargador frontal según su disponibilidad mensual:</p>
+
+  <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%; text-align: center;">
+    <thead style="background-color: #e2e8f0;">
+      <tr>
+        <th>Color</th>
+        <th>Rango de Disponibilidad</th>
+        <th>Interpretación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background-color: #48bb78; color: white;">
+        <td>🟩 Verde</td>
+        <td>≥ 87.22%</td>
+        <td>El equipo operó dentro de los estándares aceptables.</td>
+      </tr>
+      <tr style="background-color: #ecc94b; color: #2d3748;">
+        <td>🟨 Amarillo</td>
+        <td>≥ 85% y &lt; 87.22%</td>
+        <td>El equipo operó dentro de lo esperado, pero puede mejorar su eficiencia.</td>
+      </tr>
+      <tr style="background-color: #f56565; color: white;">
+        <td>🟥 Rojo</td>
+        <td>&lt; 85%</td>
+        <td>El equipo presentó excesivas horas fuera de servicio, por debajo del estándar aceptado.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
   <h3>Caso de negocio</h3>
   <p>Al 30 de junio de 2025, el valor del indicador es de 87.22%, considerado dentro del rango de desempeño aceptable (semáforo verde). Sin embargo, con el objetivo de mejorar la productividad y reducir los tiempos de inactividad, se ha establecido una meta de 90% de disponibilidad mecánica para junio de 2026, lo que representa un incremento de 2.78% respecto al valor actual.</p>
   
