@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio del Proyecto</title>
+  <title>Portafolio del Proyecto- Mina Juanita</title>
   <style>
     body { font-family: "Segoe UI", Arial, sans-serif; margin: 0; background-color: #f7f9fc; color: #222; }
     header { background: linear-gradient(90deg, #003366, #0059b3); color: white; padding: 60px 20px; text-align: center; }
@@ -18,11 +18,12 @@
     footer a { color: #66aaff; text-decoration: none; }
   </style>
 </head>
+	
 <body>
 
   <header>
-    <h1>Proyecto de Diplomatura 2025</h1>
-    <p>Portafolio – Estudio en Data Visualization and Dashboarding</p>
+    <h1>Proyecto Mina Juanita - Indicador de Disponibilidad Mecánica</h1>
+    <p>Portafolio de Diplomatura– Estudio en Data Visualization and Dashboarding 2025</p>
   </header>
 
   <nav>
@@ -41,16 +42,29 @@
     <p>La Mina Juanita es una empresa minera dedicada a la extracción de concentrado de cobre (Cu), cuya eficiencia productiva depende en gran medida del desempeño y disponibilidad de su flota de equipos, en este caso de cargadores frontales. Estos equipos cumplen un papel fundamental en el ciclo operativo de extracción, carga y transporte del mineral, siendo crucial para mantener la rentabilidad del proceso de producción.</p>
   
   <p>El presente proyecto busca implementar mejoras a través de herramientas como SQL Azure, Microsoft Fabric, Power BI y Python. Se desarrollará en torno al Indicador mensual de Porcentaje de Disponibilidad Mecánica de un cargador frontal, el cual refleja el tiempo real en que el equipo se encuentra operativo respecto al total de horas planificadas de trabajo. Este indicador permitirá evaluar la eficiencia operativa, optimizar la gestión de mantenimientos y maximizar la eficiencia operativa.</p>
+</section>
 
-	  <section id="indicador" style="font-family: Arial, sans-serif; margin: 40px; line-height: 1.6;">
-  <h2 style="color: #2a4365;">⚙️ Definición del Indicador</h2>
-  <p>
-    La <strong>Mina Juanita</strong> utiliza una flota de cargadores frontales cuya principal función es la
-    <strong>extracción de concentrado de cobre (Cu)</strong>. Estos equipos cuentan con un ciclo de mantenimiento
-    programado que busca mantenerlos en condiciones óptimas y listos para su operación.
-  </p>
+  <section id="objetivos">
+    <h2>2. Objetivos</h2>
+    <ul>
+      <li>Automatizar el cálculo del indicador de Disponibilidad Mecánica mediante un modelo de datos centralizado.</li>
+      <li>Mejorar la trazabilidad de los datos de mantenimiento y operación.</li>
+      <li>Facilitar el monitoreo mensual de desempeño a nivel de equipos.</li>
+      <li>Implementar visualizaciones dinámicas en Power BI para una mejor toma de decisiones.</li>
+    </ul>
+  </section>
 
-  <p>
+  <section id="arquitectura">
+    <h2>3. Arquitectura de la Solución</h2>
+    <p>La siguiente imagen muestra el flujo general de integración de datos del proyecto:</p>
+    <img src="DIAGRAMA DE ARQUITECTURA.png" alt="Diagrama de arquitectura de la solución" />
+    <p>
+      Se emplearon servicios de Microsoft Fabric para la gestión del lago de datos, ETL automatizado con Dataflows Gen2 y publicación de reportes en Power BI Service.
+    </p>
+  </section>
+	  <section id="indicador">
+		  <h2>4. Definición del Indicador</h2>
+    <p>
     El <strong>Indicador de Disponibilidad Mecánica (DM%)</strong> permite determinar <strong>cuánto tiempo real</strong>
     estuvo disponible un cargador frontal para operar durante un mes, en comparación con el tiempo total planificado.
   </p>
